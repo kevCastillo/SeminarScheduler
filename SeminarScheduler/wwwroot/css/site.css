@@ -30,6 +30,17 @@ body {
     letter-spacing: 0.05em;
 }
 
+.navbar-brand img {
+     height: 50px; /* Adjust this based on your design */
+     width: auto;
+     margin-right: 10px; /* Space between image and text */
+}
+
+.nav-link.active {
+    font-weight: bold;
+    border-bottom: 2px solid white;
+}
+
 /* Card styling */
 .card {
     border-radius: 0.35rem;
