@@ -1,71 +1,141 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home";
 }
 
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-10 text-center">
-            <div class="mt-5 mb-5">
-                <h1 class="display-4">Welcome to Seminar Schedule Organizer</h1>
-                <p class="lead">Simplify your academic scheduling with our comprehensive seminar management system.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="row mb-5">
-        <div class="col-md-4">
-            <div class="card shadow h-100">
-                <div class="card-body text-center">
-                    <i class="fas fa-calendar-alt fa-4x mb-3 text-primary"></i>
-                    <h3 class="card-title">Smart Scheduling</h3>
-                    <p class="card-text">Automatically detect and prevent conflicts between seminars and core curriculum classes.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card shadow h-100">
-                <div class="card-body text-center">
-                    <i class="fas fa-users fa-4x mb-3 text-primary"></i>
-                    <h3 class="card-title">Faculty Management</h3>
-                    <p class="card-text">Efficiently manage faculty teaching assignments while respecting availability constraints.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card shadow h-100">
-                <div class="card-body text-center">
-                    <i class="fas fa-chart-bar fa-4x mb-3 text-primary"></i>
-                    <h3 class="card-title">Real-time Analytics</h3>
-                    <p class="card-text">Generate comprehensive reports showing course distributions and scheduling metrics.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row mt-5 mb-5">
+    <!-- Hero Section -->
+    <div class="row mt-4 mb-5">
         <div class="col-md-6">
-            <h2>Why Choose Our Scheduler?</h2>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item"><i class="fas fa-check text-success mr-2"></i> Prevents scheduling conflicts automatically</li>
-                <li class="list-group-item"><i class="fas fa-check text-success mr-2"></i> Optimizes room usage and faculty workload</li>
-                <li class="list-group-item"><i class="fas fa-check text-success mr-2"></i> Ensures even distribution of seminars</li>
-                <li class="list-group-item"><i class="fas fa-check text-success mr-2"></i> Saves administrative time and reduces errors</li>
-                <li class="list-group-item"><i class="fas fa-check text-success mr-2"></i> Improves overall academic experience</li>
+            <h1 class="display-4">Seminar Schedule Organizer</h1>
+            <p class="lead">Streamline your institution's seminar scheduling with our intelligent, conflict-free scheduling system.</p>
+            <p>Eliminate scheduling conflicts, optimize faculty workload, and improve the academic experience for both students and faculty.</p>
+            <div class="mt-4">
+                <a class="btn btn-primary btn-lg" asp-area="Identity" asp-page="/Account/Register">Get Started</a>
+                <a class="btn btn-outline-secondary btn-lg ml-2" asp-area="Identity" asp-page="/Account/Login">Sign In</a>
+            </div>
+        </div>
+        <div class="col-md-6 text-center">
+            <img src="~/images/calendar-illustration.svg" alt="Calendar Illustration" class="img-fluid" style="max-height: 300px;">
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="row mb-5">
+        <div class="col-md-12 text-center mb-4">
+            <h2>Key Features</h2>
+            <p class="lead">Designed specifically for academic scheduling needs</p>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow">
+                <div class="card-body text-center">
+                    <div class="mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#4e73df" class="bi bi-shield-check" viewBox="0 0 16 16">
+                            <path d="M5.338 1.59a61.44 61.44 0 0 0-2.837.856.481.481 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.725 10.725 0 0 0 2.287 2.233c.346.244.652.42.893.533.12.057.218.095.293.118a.55.55 0 0 0 .101.025.615.615 0 0 0 .1-.025c.076-.023.174-.061.294-.118.24-.113.547-.29.893-.533a10.726 10.726 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.775 11.775 0 0 1-2.517 2.453 7.159 7.159 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7.158 7.158 0 0 1-1.048-.625 11.777 11.777 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 62.456 62.456 0 0 1 5.072.56z" />
+                            <path d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
+                        </svg>
+                    </div>
+                    <h4>Conflict Prevention</h4>
+                    <p>Automatically detect and prevent scheduling conflicts between seminar and core courses.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow">
+                <div class="card-body text-center">
+                    <div class="mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#1cc88a" class="bi bi-people" viewBox="0 0 16 16">
+                            <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8Zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022ZM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816ZM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0Zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z" />
+                        </svg>
+                    </div>
+                    <h4>Faculty Management</h4>
+                    <p>Optimize faculty workload and teaching assignments while respecting availability constraints.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow">
+                <div class="card-body text-center">
+                    <div class="mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#f6c23e" class="bi bi-graph-up" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M0 0h1v15h15v1H0V0Zm14.817 3.113a.5.5 0 0 1 .07.704l-4.5 5.5a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61 4.15-5.073a.5.5 0 0 1 .704-.07Z" />
+                        </svg>
+                    </div>
+                    <h4>Real-time Analytics</h4>
+                    <p>Comprehensive reporting on room utilization, faculty assignments, and scheduling efficiency.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Benefits Section -->
+    <div class="row py-5 bg-light rounded shadow-sm mb-5">
+        <div class="col-md-12 text-center mb-4">
+            <h2>Why Choose Our Solution?</h2>
+        </div>
+
+        <div class="col-md-6">
+            <ul class="list-unstyled">
+                <li class="mb-3">
+                    <div class="d-flex align-items-start">
+                        <div class="text-primary me-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h5>Reduce Administrative Workload</h5>
+                            <p>Save hours of manual scheduling and conflict resolution work.</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="mb-3">
+                    <div class="d-flex align-items-start">
+                        <div class="text-primary me-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h5>Improve Student Experience</h5>
+                            <p>Eliminate scheduling conflicts that prevent students from attending required courses.</p>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
+
         <div class="col-md-6">
-            <div class="card shadow">
-                <div class="card-header bg-primary text-white">
-                    <h5 class="m-0">Get Started Today</h5>
-                </div>
-                <div class="card-body">
-                    <p>Sign in to access all features or request a demo of our Seminar Schedule Organizer.</p>
-                    <div class="text-center mt-4">
-                        <a href="/Identity/Account/Login" class="btn btn-primary btn-lg mr-2">Sign In</a>
-                        <a href="/Identity/Account/Register" class="btn btn-outline-primary btn-lg">Register</a>
+            <ul class="list-unstyled">
+                <li class="mb-3">
+                    <div class="d-flex align-items-start">
+                        <div class="text-primary me-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h5>Optimize Resource Utilization</h5>
+                            <p>Ensure classrooms and teaching resources are used efficiently.</p>
+                        </div>
                     </div>
-                </div>
-            </div>
+                </li>
+                <li class="mb-3">
+                    <div class="d-flex align-items-start">
+                        <div class="text-primary me-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h5>Data-Driven Decisions</h5>
+                            <p>Generate comprehensive reports to support better planning and resource allocation.</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
         </div>
     </div>
 </div>

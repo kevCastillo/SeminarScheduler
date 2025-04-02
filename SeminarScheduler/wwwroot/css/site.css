@@ -1,87 +1,34 @@
+/* Custom styling for Seminar Scheduler */
+
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background-color: #f8f9fc;
 }
 
-/* Customize Bootstrap colors */
-:root {
-    --primary: #4e73df;
-    --success: #1cc88a;
-    --info: #36b9cc;
-    --warning: #f6c23e;
-    --danger: #e74a3b;
-    --secondary: #858796;
-    --light: #f8f9fc;
-    --dark: #5a5c69;
+/* Navbar styling */
+.navbar-brand {
+    font-weight: 700;
+    letter-spacing: 0.05em;
 }
-
-.bg-primary {
-    background-color: var(--primary) !important;
-}
-
-.bg-success {
-    background-color: var(--success) !important;
-}
-
-.bg-info {
-    background-color: var(--info) !important;
-}
-
-.bg-warning {
-    background-color: var(--warning) !important;
-}
-
-.bg-danger {
-    background-color: var(--danger) !important;
-}
-
-.text-primary {
-    color: var(--primary) !important;
-}
-
-.text-success {
-    color: var(--success) !important;
-}
-
-.text-info {
-    color: var(--info) !important;
-}
-
-.text-warning {
-    color: var(--warning) !important;
-}
-
-.text-danger {
-    color: var(--danger) !important;
-}
-
-.btn-primary {
-    background-color: var(--primary);
-    border-color: var(--primary);
-}
-
-    .btn-primary:hover {
-        background-color: #2e59d9;
-        border-color: #2e59d9;
-    }
 
 /* Card styling */
 .card {
@@ -94,63 +41,75 @@ body {
     border-top-right-radius: 0.35rem !important;
 }
 
+    .card-header h5 {
+        font-weight: 700;
+    }
+
 .shadow {
     box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15) !important;
 }
 
-/* Nav styling */
-.navbar {
-    height: 70px;
-}
-
-.navbar-brand {
+/* Dashboard stats cards */
+.card .display-4 {
+    font-size: 2.5rem;
     font-weight: 700;
-    font-size: 1.2rem;
 }
 
-.nav-link {
-    font-weight: 500;
-}
-
-/* Footer styling */
-.footer {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
-}
-
-/* Calendar styling */
-.fc-event {
-    cursor: pointer;
-    border-radius: 0.25rem;
-}
-
-/* Login and Registration styling */
+/* Login and registration forms */
 .form-control {
     border-radius: 0.35rem;
     padding: 0.75rem 1rem;
     font-size: 0.9rem;
 }
 
-/* Custom styling for charts */
-canvas {
-    max-width: 100%;
+/* Calendar customization */
+.fc-event {
+    cursor: pointer;
+    border-radius: 0.25rem;
 }
 
-/* Dashboard cards */
-.card .display-4 {
-    font-size: 2.5rem;
-    font-weight: 700;
+.fc-event-title {
+    font-weight: 500;
 }
 
-/* Make tables more readable */
-.table th {
-    background-color: #f8f9fc;
-    border-top: none;
-    font-weight: 700;
+.fc-header-toolbar {
+    margin-bottom: 1.5rem !important;
 }
 
-/* Badge styling */
-.badge {
-    padding: 0.5em 0.75em;
-    font-size: 0.75em;
+.fc-day-today {
+    background-color: rgba(78, 115, 223, 0.05) !important;
+}
+
+/* Button styling */
+.btn-primary {
+    background-color: #4e73df;
+    border-color: #4e73df;
+}
+
+    .btn-primary:hover {
+        background-color: #2e59d9;
+        border-color: #2653d4;
+    }
+
+/* Legend styling */
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.legend-color {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 0.25rem;
+}
+
+/* Footer styling */
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
 }
