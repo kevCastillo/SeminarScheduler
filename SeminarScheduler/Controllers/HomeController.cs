@@ -47,6 +47,13 @@ namespace SeminarScheduler.Controllers
         {
             return View();
         }
+        public class CoursesController : Controller
+        {
+            public IActionResult CoursesLoginIn()
+            {
+                return View();
+            }
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
