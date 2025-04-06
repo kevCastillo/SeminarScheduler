@@ -1,4 +1,4 @@
-﻿@page
+﻿
 @model SeminarScheduler.Views.Home.CoursesModel
 @{
 	ViewData["Title"] = "Courses";
@@ -9,6 +9,10 @@
         <div class="col-md-12">
             <div class="d-flex justify-content-between align-items-center">
                 <h2>Seminar Courses</h2>
+                <iframe src="https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID/edit?usp=sharing"
+                        width="100%" height="600px" style="border: none;">
+                </iframe>
+
                 <button class="btn btn-primary" data-toggle="modal" data-target="#addCourseModal">
                     <i class="fas fa-plus"></i> Add New Course
                 </button>
@@ -114,6 +118,10 @@
 
 <!-- Add Course Modal -->
 <div class="modal fade" id="addCourseModal" tabindex="-1" role="dialog" aria-labelledby="addCourseModalLabel" aria-hidden="true">
+    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRudbwqfFmSBCt3bglsASgV_gPgRy3q4NMy20dROz2eLeF4Yk0Sd0Ug2s3CA1ECmHqAzWjetzutWn0p/pubhtml?widget=true&amp;headers=false"
+            width="100%" height="600px" style="border: none;">
+    </iframe>
+
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header bg-primary text-white">

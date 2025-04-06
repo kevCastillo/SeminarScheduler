@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using SeminarScheduler.Views.Home;
 using System.Threading.Tasks;
 
 namespace SeminarScheduler.Controllers
@@ -27,8 +28,10 @@ namespace SeminarScheduler.Controllers
         // Courses view - lists available seminars
         public IActionResult Courses()
         {
-            return View();
+            return View("~/Views/Home/Courses.cshtml");
+
         }
+
 
         // Faculty view - lists faculty members
         public IActionResult Faculty()
