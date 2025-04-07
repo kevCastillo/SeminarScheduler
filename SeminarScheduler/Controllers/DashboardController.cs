@@ -36,7 +36,7 @@ namespace SeminarScheduler.Controllers
         // Faculty view - lists faculty members
         public IActionResult Faculty()
         {
-            return View();
+            return View("~/Views/Home/Faculty.cshtml");
         }
     }
 }
