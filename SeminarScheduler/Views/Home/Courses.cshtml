@@ -78,13 +78,13 @@
         </label>
         <input type="email" id="emailInput" placeholder="Enter Course Name...">
         <label for="numberInput">
-            Mobile Details:
-        </label>
-        <input type="text" id="numberInput" placeholder="Enter Mobile Details...">
-        <label for="addressInput">
             Date:
         </label>
-        <textarea id="addressInput" placeholder="Enter Date..."></textarea>
+        <input type="text" id="numberInput" placeholder="Enter First Date of the course...">
+        <label for="addressInput">
+            Second Date:
+        </label>
+        <textarea id="addressInput" placeholder="Enter Second Date if there is a second time..."></textarea>
         <br>
         <button onclick="addData()">Add</button>
     </div>
@@ -94,7 +94,7 @@
             <th>Course ID</th>
             <th>Course Name</th>
             <th>Date</th>
-            <th>Address</th>
+            <th>Second Date</th>
             <th>Action</th>
         </tr>
     </table>
@@ -105,7 +105,7 @@
             let courseID = document.getElementById("courseIDInput").value;
             let courseName = document.getElementById("coursenameInput").value;
             let date = document.getElementById("dateInput").value;
-            let address = document.getElementById("addressInput").value;
+            let secondDate = document.getElementById("secondDateInput").value;
 
             // Get the table and insert a new row at the end
             let table = document.getElementById("outputTable");
@@ -115,7 +115,7 @@
             newRow.insertCell(0).innerHTML = courseID;
             newRow.insertCell(1).innerHTML = courseName;
             newRow.insertCell(2).innerHTML = date;
-            newRow.insertCell(3).innerHTML = address;
+            newRow.insertCell(3).innerHTML = secondDate;
             newRow.insertCell(4).innerHTML =
                 '<button onclick="editData(this)">Edit</button>' +
                 '<button onclick="deleteData(this)">Delete</button>';
@@ -133,7 +133,7 @@
             let courseIDCell = row.cells[0];
             let courseNameCell = row.cells[1];
             let dateCell = row.cells[2];
-            let addressCell = row.cells[3];
+            let secondDateCell = row.cells[3];
 
             // Prompt the user to enter updated values
             let courseIDInput =
@@ -148,14 +148,14 @@
                 );
             let addressInput =
                 prompt("Enter the updated address:",
-                    addressCell.innerHTML
+                    secondDateCell.innerHTML
                 );
 
             // Update the cell contents with the new values
             courseIDCell.innerHTML = courseIDInput;
             courseNameCell.innerHTML = coursenameInput;
             dateCell.innerHTML = dateInput;
-            addressCell.innerHTML = addressInput;
+            secondDateCell.innerHTML = secondDateInput;
         }
 
         function deleteData(button) {
@@ -173,7 +173,7 @@
             document.getElementById("courseIDInput").value = "";
             document.getElementById("coursenameInput").value = "";
             document.getElementById("dateInput").value = "";
-            document.getElementById("addressInput").value = "";
+            document.getElementById("secondDateInput").value = "";
         }
     </script>
 </body>
