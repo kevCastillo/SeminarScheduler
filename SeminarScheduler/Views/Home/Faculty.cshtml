@@ -23,89 +23,165 @@
                     <h5 class="m-0">Faculty List</h5>
                 </div>
                 <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-bordered" id="facultyTable" width="100%" cellspacing="0">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Name</th>
-                                    <th>Department</th>
-                                    <th>Email</th>
-                                    <th>Current Workload</th>
-                                    <th>Max Workload</th>
-                                    <th>Status</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>F001</td>
-                                    <td>Dr. John Smith</td>
-                                    <td>Computer Science</td>
-                                    <td>john.smith@university.edu</td>
-                                    <td>3 courses</td>
-                                    <td>4 courses</td>
-                                    <td><span class="badge badge-success">Available</span></td>
-                                    <td>
-                                        <button class="btn btn-sm btn-primary">Edit</button>
-                                        <button class="btn btn-sm btn-info">View Schedule</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>F002</td>
-                                    <td>Dr. Emily Johnson</td>
-                                    <td>Mathematics</td>
-                                    <td>emily.johnson@university.edu</td>
-                                    <td>4 courses</td>
-                                    <td>4 courses</td>
-                                    <td><span class="badge badge-danger">Full Workload</span></td>
-                                    <td>
-                                        <button class="btn btn-sm btn-primary">Edit</button>
-                                        <button class="btn btn-sm btn-info">View Schedule</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>F003</td>
-                                    <td>Prof. Michael Williams</td>
-                                    <td>English</td>
-                                    <td>michael.williams@university.edu</td>
-                                    <td>2 courses</td>
-                                    <td>3 courses</td>
-                                    <td><span class="badge badge-success">Available</span></td>
-                                    <td>
-                                        <button class="btn btn-sm btn-primary">Edit</button>
-                                        <button class="btn btn-sm btn-info">View Schedule</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>F004</td>
-                                    <td>Dr. Sarah Brown</td>
-                                    <td>History</td>
-                                    <td>sarah.brown@university.edu</td>
-                                    <td>1 course</td>
-                                    <td>3 courses</td>
-                                    <td><span class="badge badge-success">Available</span></td>
-                                    <td>
-                                        <button class="btn btn-sm btn-primary">Edit</button>
-                                        <button class="btn btn-sm btn-info">View Schedule</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>F005</td>
-                                    <td>Dr. Robert Davis</td>
-                                    <td>Physics</td>
-                                    <td>robert.davis@university.edu</td>
-                                    <td>3 courses</td>
-                                    <td>4 courses</td>
-                                    <td><span class="badge badge-success">Available</span></td>
-                                    <td>
-                                        <button class="btn btn-sm btn-primary">Edit</button>
-                                        <button class="btn btn-sm btn-info">View Schedule</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <h2>Adding Faculty Data</h2>
+                    <style>
+                        h1,
+                        h2 {
+                            text-align: center;
+                        }
+
+                        #formContainer {
+                            text-align: center;
+                            margin-bottom: 20px;
+                        }
+
+                        label {
+                            display: block;
+                            margin-top: 10px;
+                        }
+
+                        input,
+                        textarea {
+                            width: 300px;
+                            padding: 8px;
+                            margin-top: 5px;
+                            border: 1px solid #ccc;
+                            border-radius: 4px;
+                        }
+
+                        button {
+                            margin: 10px;
+                            padding: 8px 16px;
+                            background-color: #448cfc;
+                            color: #fff;
+                            border: none;
+                            border-radius: 4px;
+                            cursor: pointer;
+                        }
+
+                            button:hover {
+                                background-color: #cbe1fc;
+                            }
+
+                        table {
+                            border-collapse: collapse;
+                            margin-bottom: 20px;
+                            width: 100%;
+                        }
+
+                        th,
+                        td {
+                            border: 1px solid #ddd;
+                            padding: 8px;
+                            text-align: center;
+                        }
+
+                        th {
+                            background-color: #0c6cfc;
+                            color: #fff;
+                        }
+                    </style>
+                    <div>
+                        <label for="idInput">ID:</label>
+                        <input type="text" id="idInput" placeholder="Enter ID...">
+
+                        <label for="nameInput">Name:</label>
+                        <input type="text" id="nameInput" placeholder="Enter Name...">
+
+                        <label for="departmentInput">Department:</label>
+                        <input type="text" id="departmentInput" placeholder="Enter Department...">
+
+                        <label for="emailInput">Email:</label>
+                        <input type="email" id="emailInput" placeholder="Enter Email...">
+
+                        <label for="currentWorkloadInput">Current Workload:</label>
+                        <input type="number" id="currentWorkloadInput" placeholder="Enter Current Workload...">
+
+                        <label for="maxWorkloadInput">Max Workload:</label>
+                        <input type="number" id="maxWorkloadInput" placeholder="Enter Max Workload...">
+
+                        <label for="statusInput">Status:</label>
+                        <input type="text" id="statusInput" placeholder="Enter Status...">
+
+                        <br>
+                        <button onclick="addData()">Add</button>
                     </div>
+
+
+                    <table id="outputTable">
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Department</th>
+                            <th>Email</th>
+                            <th>Current Workload</th>
+                            <th>Max Workload</th>
+                            <th>Status</th>
+                        </tr>
+                    </table>
+                    <script>
+                        function addData() {
+                        
+                            let id = document.getElementById("idInput").value;
+                            let name = document.getElementById("nameInput").value;
+                            let department = document.getElementById("departmentInput").value;
+                            let email = document.getElementById("emailInput").value;
+                            let currentWorkload = document.getElementById("currentWorkloadInput").value;
+                            let maxWorkload = document.getElementById("maxWorkloadInput").value;
+                            let status = document.getElementById("statusInput").value;
+
+                          
+                            let table = document.getElementById("outputTable");
+                            let newRow = table.insertRow(table.rows.length);
+
+                            
+                            newRow.insertCell(0).innerHTML = id;
+                            newRow.insertCell(1).innerHTML = name;
+                            newRow.insertCell(2).innerHTML = department;
+                            newRow.insertCell(3).innerHTML = email;
+                            newRow.insertCell(4).innerHTML = currentWorkload;
+                            newRow.insertCell(5).innerHTML = maxWorkload;
+                            newRow.insertCell(6).innerHTML = status;
+
+                            
+                            let actionCell = newRow.insertCell(7);
+                            actionCell.innerHTML =
+                                '<button onclick="editData(this)">Edit</button> ' +
+                                '<button onclick="deleteData(this)">Delete</button>';
+
+                           
+                            clearInputs();
+                        }
+
+                        function editData(button) {
+                           
+                            let row = button.parentNode.parentNode;             
+                            row.cells[0].innerHTML = prompt("Update ID:", row.cells[0].innerHTML);
+                            row.cells[1].innerHTML = prompt("Update Name:", row.cells[1].innerHTML);
+                            row.cells[2].innerHTML = prompt("Update Department:", row.cells[2].innerHTML);
+                            row.cells[3].innerHTML = prompt("Update Email:", row.cells[3].innerHTML);
+                            row.cells[4].innerHTML = prompt("Update Current Workload:", row.cells[4].innerHTML);
+                            row.cells[5].innerHTML = prompt("Update Max Workload:", row.cells[5].innerHTML);
+                            row.cells[6].innerHTML = prompt("Update Status:", row.cells[6].innerHTML);
+                        }
+
+                        function deleteData(button) {                           
+                            let row = button.parentNode.parentNode;
+                            row.remove();
+                        }
+
+                        function clearInputs() {
+                            document.getElementById("idInput").value = "";
+                            document.getElementById("nameInput").value = "";
+                            document.getElementById("departmentInput").value = "";
+                            document.getElementById("emailInput").value = "";
+                            document.getElementById("currentWorkloadInput").value = "";
+                            document.getElementById("maxWorkloadInput").value = "";
+                            document.getElementById("statusInput").value = "";
+                        }
+                    </script>
+                               
+                        
                 </div>
             </div>
         </div>
