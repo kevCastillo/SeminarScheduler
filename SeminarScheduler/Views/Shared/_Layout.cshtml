@@ -28,16 +28,13 @@
                             <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Dashboard" asp-action="Index">Dashboard</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Calendar">Calendar</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Dashboard" asp-action="Calendar">Calendar</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Courses">Courses</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Dashboard" asp-action="Courses">Courses</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Dashboard" asp-action="Faculty">Faculty</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Faculty">Faculty</a>
                         </li>
                     </ul>
                     <partial name="_LoginPartial" />
@@ -63,5 +60,11 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
+
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle" class="btn btn-outline-secondary position-fixed" style="bottom: 20px; right: 20px;">
+        <i class="fas fa-moon"></i>
+    </button>
+    <script src="~/js/theme-switcher.js" asp-append-version="true"></script>
 </body>
 </html>

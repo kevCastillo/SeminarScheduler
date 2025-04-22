@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using SeminarScheduler.Models;
@@ -23,21 +24,25 @@ namespace SeminarScheduler.Controllers
             return View();
         }
 
+        [Authorize] // This attribute ensures only authenticated users can access
         public IActionResult Dashboard()
         {
             return View();
         }
 
+        [Authorize]
         public IActionResult Calendar()
         {
             return View();
         }
 
+        [Authorize]
         public IActionResult Courses()
         {
             return View();
         }
 
+        [Authorize]
         public IActionResult Faculty()
         {
             return View();

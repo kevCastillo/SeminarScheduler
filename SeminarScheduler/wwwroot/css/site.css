@@ -1,55 +1,125 @@
-/* Custom styling for Seminar Scheduler */
+/* Custom styling for Seminar Scheduler with dark mode support */
+
+:root {
+    /* Light theme variables */
+    --font-size-base: 14px;
+    --font-size-large: 16px;
+    --background-color: #f8f9fc;
+    --text-color: #5a5c69;
+    --navbar-text-color: white;
+    --card-bg: #ffffff;
+    --border-color: #e3e6f0;
+    --primary-color: #4e73df;
+    --primary-hover: #2e59d9;
+    --primary-border: #2653d4;
+    --shadow-color: rgba(58, 59, 69, 0.15);
+    --focus-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    --calendar-today-bg: rgba(78, 115, 223, 0.05);
+    --footer-bg: #ffffff;
+    --input-bg: #ffffff;
+    --input-bg-focus: #f8f9fc;
+    --btn-close-filter: none;
+}
+
+[data-theme="dark"] {
+    /* Dark theme variables */
+    --background-color: #1e2235;
+    --text-color: #e0e0e0;
+    --navbar-text-color: #f8f9fc;
+    --card-bg: #2d3350;
+    --border-color: #3a4163;
+    --primary-color: #375fd9;
+    --primary-hover: #2b4cb3;
+    --primary-border: #2244a8;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --focus-shadow: 0 0 0 0.1rem #3a4163, 0 0 0 0.25rem #375fd9;
+    --calendar-today-bg: rgba(55, 95, 217, 0.1);
+    --footer-bg: #1e2235;
+    --input-bg: #232842;
+    --input-bg-focus: #2a304e;
+    --btn-close-filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+[data-theme="dark"] input[type="datetime-local"] {
+        color-scheme: dark;
+}
 
 html {
-    font-size: 14px;
-}
-
-@media (min-width: 768px) {
-    html {
-        font-size: 16px;
-    }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
+    font-size: var(--font-size-base);
     position: relative;
     min-height: 100%;
 }
 
+@media (min-width: 768px) {
+    html {
+        font-size: var(--font-size-large);
+    }
+}
+
 body {
     margin-bottom: 60px;
-    background-color: #f8f9fc;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Focus styles */
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
+    box-shadow: var(--focus-shadow);
 }
 
 /* Navbar styling */
+.navbar {
+    background-color: var(--primary-color) !important;
+    transition: background-color 0.3s ease;
+}
+
 .navbar-brand {
     font-weight: 700;
     letter-spacing: 0.05em;
+    color: var(--navbar-text-color);
 }
 
-.navbar-brand img {
-     height: 50px; /* Adjust this based on your design */
-     width: auto;
-     margin-right: 10px; /* Space between image and text */
+    .navbar-brand img {
+        height: 50px;
+        width: auto;
+        margin-right: 10px;
+    }
+
+.nav-link {
+    color: var(--navbar-text-color) !important;
+    opacity: 0.8;
+    transition: opacity 0.3s ease, border-bottom 0.3s ease;
 }
 
-.nav-link.active {
-    font-weight: bold;
-    border-bottom: 2px solid white;
-}
+    .nav-link:hover {
+        opacity: 1;
+    }
+
+    .nav-link.active {
+        font-weight: bold;
+        opacity: 1;
+        border-bottom: 2px solid var(--navbar-text-color);
+    }
 
 /* Card styling */
 .card {
     border-radius: 0.35rem;
     border: none;
+    background-color: var(--card-bg);
+    transition: background-color 0.3s ease;
 }
 
 .card-header {
     border-top-left-radius: 0.35rem !important;
     border-top-right-radius: 0.35rem !important;
+    background-color: var(--primary-color);
+    color: var(--navbar-text-color);
+    transition: background-color 0.3s ease;
 }
 
     .card-header h5 {
@@ -57,13 +127,7 @@ body {
     }
 
 .shadow {
-    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15) !important;
-}
-
-/* Dashboard stats cards */
-.card .display-4 {
-    font-size: 2.5rem;
-    font-weight: 700;
+    box-shadow: 0 0.15rem 1.75rem 0 var(--shadow-color) !important;
 }
 
 /* Login and registration forms */
@@ -71,7 +135,16 @@ body {
     border-radius: 0.35rem;
     padding: 0.75rem 1rem;
     font-size: 0.9rem;
+    background-color: var(--background-color);
+    border-color: var(--border-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
+
+    .form-control:focus {
+        background-color: var(--background-color);
+        color: var(--text-color);
+    }
 
 /* Calendar customization */
 .fc-event {
@@ -88,18 +161,60 @@ body {
 }
 
 .fc-day-today {
-    background-color: rgba(78, 115, 223, 0.05) !important;
+    background-color: var(--calendar-today-bg) !important;
 }
+
+.fc-theme-standard .fc-scrollgrid {
+    border-color: var(--border-color);
+}
+
+.fc .fc-col-header-cell-cushion,
+.fc .fc-daygrid-day-number,
+.fc .fc-list-day-text,
+.fc .fc-list-day-side-text {
+    color: var(--text-color);
+}
+
+/* Modal dark mode styling */
+.modal-content {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border-color: var(--border-color);
+}
+
+.modal-header, .modal-footer {
+    border-color: var(--border-color);
+}
+
+    .modal-header .btn-close {
+        color: var(--text-color);
+        filter: var(--btn-close-filter);
+    }
+
+/* Form controls in modals */
+.modal .form-control,
+.modal .form-select {
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    border-color: var(--border-color);
+}
+
+    .modal .form-control:focus,
+    .modal .form-select:focus {
+        background-color: var(--input-bg-focus);
+        color: var(--text-color);
+    }
 
 /* Button styling */
 .btn-primary {
-    background-color: #4e73df;
-    border-color: #4e73df;
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--navbar-text-color);
 }
 
     .btn-primary:hover {
-        background-color: #2e59d9;
-        border-color: #2653d4;
+        background-color: var(--primary-hover);
+        border-color: var(--primary-border);
     }
 
 /* Legend styling */
@@ -123,4 +238,31 @@ body {
     width: 100%;
     white-space: nowrap;
     line-height: 60px;
+    background-color: var(--footer-bg);
+    border-top: 1px solid var(--border-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
+
+/* Theme toggle button */
+#theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    box-shadow: 0 0.15rem 1.75rem 0 var(--shadow-color);
+    transition: all 0.3s ease;
+}
+
+    #theme-toggle:hover {
+        transform: scale(1.05);
+    }

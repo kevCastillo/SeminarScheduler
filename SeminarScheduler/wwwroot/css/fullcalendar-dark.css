@@ -1,0 +1,46 @@
+﻿/* FullCalendar dark theme overrides */
+.fc-theme-dark .fc-scrollgrid,
+.fc-theme-dark .fc-scrollgrid-section > td,
+.fc-theme-dark .fc-list-sticky .fc-list-day > * {
+    border-color: var(--border-color) !important;
+}
+
+.fc-theme-dark .fc-scrollgrid-section-header > *,
+.fc-theme-dark .fc-scrollgrid-section-footer > * {
+    border-color: var(--border-color) !important;
+    background-color: var(--background-color);
+}
+
+.fc-theme-dark .fc-daygrid-day-number,
+.fc-theme-dark .fc-col-header-cell-cushion {
+    color: var(--text-color);
+}
+
+.fc-theme-dark .fc-day-today {
+    background-color: var(--calendar-today-bg) !important;
+}
+
+.fc-theme-dark .fc-timegrid-slot {
+    border-color: var(--border-color) !important;
+}
+
+.fc-theme-dark .fc-timegrid-axis {
+    border-color: var(--border-color) !important;
+    background-color: var(--background-color);
+}
+
+.fc-theme-dark .fc-timegrid-axis-cushion {
+    color: var(--text-color);
+}
+
+.fc-theme-dark .fc-timegrid-slot-label-cushion {
+    color: var(--text-color);
+}
+
+.fc-theme-dark .fc-list-day-cushion {
+    background-color: var(--background-color);
+}
+
+.fc-theme-dark .fc-list-event:hover td {
+    background-color: var(--calendar-today-bg) !important;
+}

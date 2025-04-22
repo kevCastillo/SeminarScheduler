@@ -11,32 +11,25 @@ namespace SeminarScheduler.Controllers
         // Main dashboard view - displays overview statistics and recent activity
         public IActionResult Index()
         {
-            // In a real application, you would fetch data from services/repositories
-            // For mockup purposes, we'll just return the view
-            return View();
+            return RedirectToAction("Index", "Home");
         }
 
-        // Calendar view - displays schedule in calendar format
+        // Calendar view
         public IActionResult Calendar()
         {
-            // In a real implementation, you would:
-            // 1. Fetch seminar and course data from database
-            // 2. Pass the data to the view via a view model
-            return View();
+            return RedirectToAction("Calendar", "Home");
         }
 
         // Courses view - lists available seminars
         public IActionResult Courses()
         {
-            return View("~/Views/Home/Courses.cshtml");
-
+            return RedirectToAction("Courses", "Home");
         }
-
 
         // Faculty view - lists faculty members
         public IActionResult Faculty()
         {
-            return View("~/Views/Home/Faculty.cshtml");
+            return RedirectToAction("Faculty", "Home");
         }
     }
 }
