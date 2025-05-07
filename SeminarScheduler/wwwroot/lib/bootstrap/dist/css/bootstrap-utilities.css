@@ -1413,10 +1413,11 @@
   background-color: rgba(var(--bs-danger-rgb), var(--bs-bg-opacity)) !important;
 }
 
-.bg-light {
-  --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
+[data-theme="dark"] .bg-light {
+    background-color: #384367 !important; /* Dark background */
+    color: #ffffff !important; /* Light text */
 }
+
 
 .bg-dark {
   --bs-bg-opacity: 1;
