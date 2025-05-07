@@ -1,4 +1,4 @@
-﻿/* FullCalendar dark theme overrides */
+/* FullCalendar dark theme overrides */
 .fc-theme-dark .fc-scrollgrid,
 .fc-theme-dark .fc-scrollgrid-section > td,
 .fc-theme-dark .fc-list-sticky .fc-list-day > * {
@@ -43,4 +43,14 @@
 
 .fc-theme-dark .fc-list-event:hover td {
     background-color: var(--calendar-today-bg) !important;
+}
+
+[data-theme="dark"] .bg-light {
+    background-color: #384367 !important; /* Dark background */
+    color: #ffffff !important; /* Light text */
+}
+
+[data-theme="dark"] {
+    --bs-light-rgb: 44, 44, 44; /* Adjust to a dark color */
+    --bs-bg-opacity: 1;
 }
